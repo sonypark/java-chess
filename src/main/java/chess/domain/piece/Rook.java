@@ -3,8 +3,8 @@ package chess.domain.piece;
 import chess.domain.Position;
 
 public class Rook extends AbstractPiece {
-    public Rook(Position position) {
-        super(position, Symbol.ROOK);
+    public Rook(Position position, Team team) {
+        super(position, Symbol.ROOK, team);
     }
 
     @Override

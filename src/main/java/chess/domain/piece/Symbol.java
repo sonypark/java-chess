@@ -4,7 +4,7 @@ public enum Symbol {
     KING("k"),
     QUEEN("q"),
     BISHOP("b"),
-    KNIGHT("k"),
+    KNIGHT("n"),
     ROOK("r"),
     PAWN("p"),
     BLANK(".");
