@@ -23,4 +23,8 @@ public abstract class AbstractPiece implements Piece {
         }
         return symbol.getWhite();
     }
+
+	public boolean isNotTeam(Team team) {
+        return !this.team.equals(team);
+    };
 }

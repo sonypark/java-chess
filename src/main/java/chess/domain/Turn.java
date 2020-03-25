@@ -15,4 +15,8 @@ public class Turn {
         }
         return new Turn(Team.BLACK);
     }
+
+	public Team getTeam() {
+        return team;
+	}
 }

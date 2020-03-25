@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
+import chess.domain.piece.AbstractPiece;
+import chess.domain.piece.Blank;
 import chess.domain.piece.Team;
 
 public class Board {
@@ -23,6 +25,18 @@ public class Board {
 		ranks.add(Rank.initializeBlanks(5));
 		ranks.add(Rank.initializePawns(6, Team.BLACK));
 		ranks.add(Rank.initializePieces(7, Team.BLACK));
+	}
+
+	public void move(Position source, Position target, Team team) {
+		Rank sourceRank = ranks.get(source.getY());
+		Rank targetRank = ranks.get(target.getY());
+		AbstractPiece piece = sourceRank.get(source.getX());
+		if (piece.isNotTeam(team)) {
+			throw new IllegalArgumentException();
+		}
+		piece.move(target);
+		sourceRank.set(source.getX(), new Blank(source));
+		targetRank.set(target.getX(), piece);
 	}
 
 	public List<Rank> getRanks() {

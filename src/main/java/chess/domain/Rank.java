@@ -8,6 +8,7 @@ import java.util.List;
 import chess.domain.piece.AbstractPiece;
 import chess.domain.piece.Blank;
 import chess.domain.piece.Pawn;
+import chess.domain.piece.Piece;
 import chess.domain.piece.Team;
 
 public class Rank {
@@ -47,5 +48,18 @@ public class Rank {
 
 	public List<AbstractPiece> getValue() {
 		return Collections.unmodifiableList(pieces);
+	}
+
+	public AbstractPiece get(int x) {
+		return pieces.get(x);
+	}
+
+	public void move(int x, Position target) {
+		Piece piece = pieces.get(x);
+		piece.move(target);
+	}
+
+	public void set(int x, AbstractPiece piece) {
+		pieces.set(x, piece);
 	}
 }

@@ -16,10 +16,20 @@ public class RunningState implements State {
 
     @Override
     public State command(String input) {
-        if (input.equals("end")) {
+        String[] tokens = input.split(" ");
+        if (tokens[0].equals("end")) {
             return new EndState();
         }
+        if (tokens[0].equals("move")) {
+            move(Position.from(tokens[1]), Position.from(tokens[2]));
+            return this;
+        }
         throw new UnsupportedOperationException();
+    }
+
+    private void move(Position source, Position target) {
+        board.move(source, target, turn.getTeam());
+        turn = turn.next();
     }
 
     @Override
