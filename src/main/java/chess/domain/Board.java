@@ -7,6 +7,7 @@ import java.util.ListIterator;
 
 import chess.domain.piece.AbstractPiece;
 import chess.domain.piece.Blank;
+import chess.domain.piece.Position;
 import chess.domain.piece.Team;
 
 public class Board {

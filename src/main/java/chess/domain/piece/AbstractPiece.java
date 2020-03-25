@@ -1,7 +1,5 @@
 package chess.domain.piece;
 
-import chess.domain.Position;
-
 public abstract class AbstractPiece implements Piece {
     protected Position position;
     protected Symbol symbol;
@@ -24,7 +22,9 @@ public abstract class AbstractPiece implements Piece {
         return symbol.getWhite();
     }
 
-	public boolean isNotTeam(Team team) {
+    public boolean isNotTeam(Team team) {
         return !this.team.equals(team);
-    };
+    }
+
+    protected abstract boolean isMovable(Position target);
 }

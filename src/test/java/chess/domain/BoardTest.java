@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import chess.domain.piece.Blank;
 import chess.domain.piece.Pawn;
 import chess.domain.piece.Piece;
+import chess.domain.piece.Position;
 import chess.domain.piece.Team;
 
 public class BoardTest {

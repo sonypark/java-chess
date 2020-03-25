@@ -1,4 +1,6 @@
-package chess.domain;
+package chess.domain.piece;
+
+import static java.lang.Math.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +27,7 @@ public class Position {
         this.y = y;
     }
 
-    static Position of(int x, int y) {
+    public static Position of(int x, int y) {
         return from(key(x, y));
     }
 
@@ -39,6 +41,16 @@ public class Position {
 
     public static String key(int x, int y) {
         return (char)('a' + x) + String.valueOf(1 + y);
+    }
+
+    public Position subtract(Position position) {
+        return new Position(this.x - position.x, this.y - position.y);
+    }
+
+    public Position vector(Position position) {
+        Position difference = subtract(position);
+        double distance = sqrt(pow(abs(difference.x), 2) + pow(abs(difference.y), 2));
+        return new Position((int)ceil(abs(difference.x) / distance), (int)ceil(abs(difference.y) / distance));
     }
 
     public int getX() {

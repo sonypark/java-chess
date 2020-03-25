@@ -1,6 +1,6 @@
 package chess.domain.piece;
 
-import chess.domain.Position;
+import java.util.List;
 
 public class Pawn extends AbstractPiece {
     public Pawn(Position position, Team team) {
@@ -12,4 +12,8 @@ public class Pawn extends AbstractPiece {
         this.position = position;
     }
 
+    @Override
+    protected boolean isMovable(Position target) {
+        return false;
+    }
 }

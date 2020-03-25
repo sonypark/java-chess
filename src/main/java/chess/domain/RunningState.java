@@ -1,5 +1,7 @@
 package chess.domain;
 
+import chess.domain.piece.Position;
+
 public class RunningState implements State {
     private Board board;
     private Turn turn;

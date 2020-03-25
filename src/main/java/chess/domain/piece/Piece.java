@@ -1,8 +1,9 @@
 package chess.domain.piece;
 
-import chess.domain.Position;
+import java.util.List;
 
 public interface Piece {
     void move(Position position);
+
 }
 

@@ -1,7 +1,5 @@
 package chess.domain.piece;
 
-import chess.domain.Position;
-
 public class Blank extends AbstractPiece {
     public Blank(Position position) {
         super(position, Symbol.BLANK, Team.NONE);
@@ -9,6 +7,11 @@ public class Blank extends AbstractPiece {
 
     @Override
     public void move(Position position) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    protected boolean isMovable(Position target) {
         throw new UnsupportedOperationException();
     }
 }

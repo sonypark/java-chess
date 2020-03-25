@@ -1,6 +1,6 @@
 package chess.domain.piece;
 
-import chess.domain.Position;
+import java.util.List;
 
 public class Knight extends AbstractPiece {
     public Knight(Position position, Team team) {
@@ -10,5 +10,10 @@ public class Knight extends AbstractPiece {
     @Override
     public void move(Position position) {
         this.position = position;
+    }
+
+    @Override
+    protected boolean isMovable(Position target) {
+        return false;
     }
 }

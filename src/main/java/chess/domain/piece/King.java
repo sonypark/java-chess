@@ -1,7 +1,5 @@
 package chess.domain.piece;
 
-import chess.domain.Position;
-
 public class King extends AbstractPiece {
     public King(Position position, Team team) {
         super(position, Symbol.KING, team);
@@ -10,5 +8,10 @@ public class King extends AbstractPiece {
     @Override
     public void move(Position position) {
         this.position = position;
+    }
+
+    @Override
+    protected boolean isMovable(Position target) {
+        return false;
     }
 }
