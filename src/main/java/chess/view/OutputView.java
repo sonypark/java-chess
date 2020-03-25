@@ -12,7 +12,7 @@ public class OutputView {
     }
 
     public static void printBoard(Board board) {
-        for (Rank rank : board.getRanks()) {
+        for (Rank rank : board.getReverseRanks()) {
             for (AbstractPiece piece : rank.getValue()) {
                 System.out.print(piece.symbol());
             }
