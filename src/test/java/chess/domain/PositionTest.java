@@ -8,19 +8,19 @@ import org.junit.jupiter.api.Test;
 public class PositionTest {
 	@Test
 	void constructor() {
-		assertThat(Position.of(1, 1)).isInstanceOf(Position.class);
+		assertThat(Position.of(0, 0)).isInstanceOf(Position.class);
 	}
 
 	@Test
 	void equals() {
-		assertThat(Position.of(1, 1)).isEqualTo(Position.of(1, 1));
+		assertThat(Position.of(0, 0)).isEqualTo(Position.of(0, 0));
 	}
 
 	@Test
 	@DisplayName("문자열을 넣었을 때 정상적인 위치를 반환")
 	void from() {
-		assertThat(Position.from("a1")).isEqualTo(Position.of(1, 1));
-		assertThat(Position.from("h8")).isEqualTo(Position.of(8, 8));
+		assertThat(Position.from("a1")).isEqualTo(Position.of(0, 0));
+		assertThat(Position.from("h8")).isEqualTo(Position.of(7, 7));
 	}
 
 	@Test

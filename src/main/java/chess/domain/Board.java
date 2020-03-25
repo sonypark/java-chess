@@ -14,14 +14,14 @@ public class Board {
     }
 
     public void initialize() {
-        ranks.add(Rank.initializePieces(8, Team.BLACK));
-        ranks.add(Rank.initializePawn(7, Team.BLACK));
-        ranks.add(Rank.initializeBlanks(6));
+        ranks.add(Rank.initializePieces(7, Team.BLACK));
+        ranks.add(Rank.initializePawns(6, Team.BLACK));
         ranks.add(Rank.initializeBlanks(5));
         ranks.add(Rank.initializeBlanks(4));
         ranks.add(Rank.initializeBlanks(3));
-        ranks.add(Rank.initializePawn(2, Team.WHITE));
-        ranks.add(Rank.initializePieces(1, Team.WHITE));
+        ranks.add(Rank.initializeBlanks(2));
+        ranks.add(Rank.initializePawns(1, Team.WHITE));
+        ranks.add(Rank.initializePieces(0, Team.WHITE));
     }
 
     public List<Rank> getRanks() {

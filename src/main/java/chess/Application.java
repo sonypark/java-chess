@@ -7,9 +7,8 @@ import chess.view.OutputView;
 
 public class Application {
     public static void main(String[] args) {
-        OutputView.printGameStart();
-
         ChessGame chessGame = new ChessGame(new ReadyState());
+        OutputView.printGameStart();
         while (chessGame.isNotFinished()) {
             chessGame.command(InputView.inputCommand());
             OutputView.printBoard(chessGame.getBoard());

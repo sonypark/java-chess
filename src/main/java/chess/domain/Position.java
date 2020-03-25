@@ -5,15 +5,16 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Position {
-    private static final int RANGE = 8;
+    private static final int ROW = 8;
+    private static final int COL = 8;
     private static final Map<String, Position> POSITIONS = new HashMap<>();
 
     private final int x;
     private final int y;
 
     static {
-        for (int y = 1; y <= RANGE; y++) {
-            for (int x = 1; x <= RANGE; x++) {
+        for (int y = 0; y < ROW; y++) {
+            for (int x = 0; x < COL; x++) {
                 POSITIONS.put(key(x, y), new Position(x, y));
             }
         }
@@ -37,7 +38,15 @@ public class Position {
     }
 
     public static String key(int x, int y) {
-        return (char)('a' + x - 1) + String.valueOf(y);
+        return (char)('a' + x) + String.valueOf(1 + y);
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     @Override
